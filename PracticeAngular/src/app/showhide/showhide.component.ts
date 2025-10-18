@@ -84,3 +84,17 @@ export class ShowhideComponent {
     };
   }
 }
+
+
+
+// Two-way data binding ([(ngModel)])
+
+// Property binding ([hidden])
+
+// Structural directive (*ngIf)
+
+// Class & ngClass binding
+
+// Interpolation ({{ }}) and JSON pipe
+
+// Standalone component with FormsModule & CommonModule
