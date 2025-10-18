@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // ← Ye import karna important hai
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // ← Yeh line honi chahiye
-  imports: [CommonModule, FormsModule], // ← FormsModule yahan add karein
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [FormsModule],
+  template: `
+    <h1>Welcome to My App!</h1>
+    <input type="text" [(ngModel)]="name" placeholder="Enter your name">
+    <p>Hello, {{ name }}!</p>
+    <button (click)="showAlert()">Click Me</button>
+  `,
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   name: string = 'Angular User';
+
+  showAlert() {
+    alert('Hello ' + this.name);
+  }
 }
