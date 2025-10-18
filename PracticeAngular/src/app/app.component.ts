@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   template: `
     <h1>Welcome to My App!</h1>
-    <input type="text" [(ngModel)]="name" placeholder="Enter your name">
+    <input type="text" [(ngModel)]="name" >
     <p>Hello, {{ name }}!</p>
     <button (click)="showAlert()">Click Me</button>
   `,
