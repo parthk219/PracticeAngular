@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
-import { CounterComponent } from './counter/counter.component';
+import { ShowhideComponent } from './showhide/showhide.component';
+// OR for simple version:
+// import { SimpleShowhideComponent } from './simple-showhide/simple-showhide.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CounterComponent],
+  imports: [ShowhideComponent], // OR SimpleShowhideComponent
   template: `
-    <h1>My Angular App</h1>
-    <app-counter></app-counter>
-   <!-- <app-counter></app-counter> -->
-     <!-- Multiple counters can be used -->
+    <app-showhide></app-showhide>
   `
 })
 export class AppComponent {
-  title = 'event-binding-demo';
+  title = 'property-binding-demo';
 }
