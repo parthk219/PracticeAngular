@@ -1,22 +1,17 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { CounterComponent } from './counter/counter.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CounterComponent],
   template: `
-    <h1>Welcome to My App!</h1>
-    <input type="text" [(ngModel)]="name" >
-    <p>Hello, {{ name }}!</p>
-    <button (click)="showAlert()">Click Me</button>
-  `,
-  styleUrls: ['./app.component.css']
+    <h1>My Angular App</h1>
+    <app-counter></app-counter>
+   <!-- <app-counter></app-counter> -->
+     <!-- Multiple counters can be used -->
+  `
 })
 export class AppComponent {
-  name: string = 'Angular User';
-
-  showAlert() {
-    alert('Hello ' + this.name);
-  }
+  title = 'event-binding-demo';
 }
