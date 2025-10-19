@@ -1,22 +1,43 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   template: `
-    <h1>Welcome to My App!</h1>
-    <input type="text" [(ngModel)]="name" >
-    <p>Hello, {{ name }}!</p>
-    <button (click)="showAlert()">Click Me</button>
-  `,
-  styleUrls: ['./app.component.css']
+    <div>
+      <h2>Number Array</h2>
+      
+      <input type="number" [(ngModel)]="newNumber">
+      <button (click)="addNumber()">Add</button>
+      <button (click)="deleteLast()">Delete Last</button>
+      
+      <div *ngIf="numbers.length > 0">
+        <h3>Numbers:</h3>
+        <div *ngFor="let num of numbers; let i = index">
+          {{ i + 1 }}. {{ num }}
+        </div>
+        <p>Total: {{ numbers.length }} numbers</p>
+      </div>
+      
+      <div *ngIf="numbers.length === 0">
+        <p>No numbers added</p>
+      </div>
+    </div>
+  `
 })
 export class AppComponent {
-  name: string = 'Angular User';
+  numbers: number[] = [10, 20, 30]; // Starting with some numbers
+  newNumber: number = 0;
 
-  showAlert() {
-    alert('Hello ' + this.name);
+  addNumber() {
+    this.numbers.push(this.newNumber);
+    this.newNumber = 0;
+  }
+
+  deleteLast() {
+    this.numbers.pop();
   }
 }
