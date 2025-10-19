@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ParentComponent } from '../parent/parent.component';
 
 @Component({
   selector: 'app-child',
@@ -100,3 +101,14 @@ export class ChildComponent {
     this.countToParent.emit(this.countFromParent + 1);
   }
 }
+
+
+
+
+// CHILD---->Parent
+
+// 1. Template (HTML) me (click)="sendMessageToParent()" likha — jab button click hota hai, method call hoti hai.
+
+// 2. Method sendMessageToParent() ke andar this.messageToParent.emit(this.childMessage) likha — ye data emit karta hai.
+
+// 3. Property @Output() messageToParent = new EventEmitter<string>(); — ye line parent ko event bhejne ke liye declare ki gayi hai.

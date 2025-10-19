@@ -79,3 +79,12 @@ export class ParentComponent {
     this.childCount = count;
   }
 }
+
+// PARENT --> CHILD
+
+// 0. <input [(ngModel)]="parentMessage" placeholder="Type message for child">
+// 1. Parent apne template me child ko call karta hai: `<app-child [messageFromParent]="parentMessage">`.
+// 2. `[ ]` ka matlab hai — **parent variable ko child property se bind karna**.
+// 3. Child component me `@Input()` se property define hoti hai — Angular yaha value inject karta hai.
+// 4. Jab parent ka data change hota hai, wo automatic child me update hota hai.
+// 5. Ye flow **one-way (Parent → Child)** hota hai, child ise sirf read kar sakta hai.
