@@ -1,6 +1,5 @@
-<h3>Two-way binding example</h3>
+<h2>AppComponent (Parent)</h2>
+<p>{{ parentMessage }}</p>
 
-<label>Enter name:</label>
-<input [(ngModel)]="name" placeholder="Type name">
-
-<p>Hello, {{ name }}!</p>
+<!-- Include the CounterComponent child -->
+<app-counter></app-counter>

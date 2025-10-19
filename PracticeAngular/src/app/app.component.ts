@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
-import { CounterComponent } from './counter/counter.component';
+import { CommonModule } from '@angular/common';
+import { ParentComponent } from './parent/parent.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CounterComponent],
+  imports: [CommonModule, ParentComponent],
   template: `
-    <h1>My Angular App</h1>
-    <app-counter></app-counter>
-   <!-- <app-counter></app-counter> -->
-     <!-- Multiple counters can be used -->
+    <div style="padding: 20px; font-family: Arial;">
+      <h1>🔄 Angular Parent to Child Communication</h1>
+      <p style="color: #666;">Parent se Child mein data kaise bhejte hain</p>
+      
+      <!-- Parent Component Use karo -->
+      <app-parent></app-parent>
+    </div>
   `
 })
 export class AppComponent {
-  title = 'event-binding-demo';
+  title = 'parent-child-demo';
 }
