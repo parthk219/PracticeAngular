@@ -65,7 +65,7 @@ import { ChildComponent } from '../child/child.component';
   `]
 })
 export class ParentComponent {
-  parentMessage = 'Hello from Parent!';
+  parentMessage = '';
   parentCount = 10;
   
   childMessage = '';
